@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    var ancho = parseInt(prompt("Introduce el ancho de la celda (en pixels):"));
+    var alto = ancho;
+
+    document.write("<table border='0' cellspacing='0' cellpadding='0'>");
+
+    for (var fila = 0; fila < 8; fila++) {
+        document.write("<tr>");
+        for (var columna = 0; columna < 8; columna++) {
+            if ((fila + columna) % 2 == 0) {
+                document.write("<td width='" + ancho + "' height='" + alto + "' bgcolor='white'>&nbsp;</td>");
+            } else {
+                document.write("<td width='" + ancho + "' height='" + alto + "' bgcolor='black'>&nbsp;</td>");
+            }
+        }
+        document.write("</tr>");
+    }
+
+    document.write("</table>");   
+    </script>
+</body>
+</html>
