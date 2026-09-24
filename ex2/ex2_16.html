@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var numero = parseInt(prompt("el jugador1 a introducir un numero:"));
+        var numeroAdivinado = parseInt(prompt("el jugador2 a adivinar el numero :"));
+        while (numeroAdivinado != numero) {
+            console.log("el numero adivinado es incorrecto");
+            if ( numeroAdivinado < numero) {
+                console.log("el numero adivinado es menor que el numero a adivinar");
+            } else {
+                console.log("el numero adivinado es mayor que el numero a adivinar");
+            }
+         numeroAdivinado = parseInt(prompt("el jugador2 a intentar otra vez :"));
+        }
+        console.log("¡Felicidades! Has adivinado el número.");
+    </script>
+</body>
+</html>
