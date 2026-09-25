@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let opcion = parseInt(prompt(" 1 - calcular area del triangulo \n 2 - clacular area del rectangulo \n 3 - calcular area del circulo \n 4 - salir"));
+        while(opcion != 4){
+            switch(opcion){
+                case 1: 
+                    let baseTriangulo =  parseInt(prompt( "introduce la base del triangulo: "));
+                    let alturaTriangulo = parseInt(prompt("introduce la altura del triangulo: "));
+                    let areaTriangulo = (baseTriangulo * alturaTriangulo) / 2;
+                    alert("el area del triangulo es: " + areaTriangulo);
+                    break;
+                case 2:
+                    let baseRectangulo = parseInt(prompt("introduce la base del rectangulo: "));
+                    let alturaRectangulo = parseInt(prompt("introduce la altura del rectangulo: "));
+                    let areaRectangulo = baseRectangulo * alturaRectangulo;
+                    alert("el area del rectangulo es: " + areaRectangulo);
+                    break;
+                case 3:
+                    let radio = parseInt(prompt("introduce el radio del circulo: "));
+                    let areaCirculo = Math.PI * radio * radio;
+                    alert("el area del circulo es: " + areaCirculo);
+                    break;
+                default:
+                    alert("opcion no valida");  
+            }
+            opcion = parseInt(prompt(" 1 - calcular area del triangulo \n 2 - clacular area del rectangulo \n 3 - calcular area del circulo \n 4 - salir"));
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let posCorredor1 = 0;
+        let posCorredor2 = 5;
+        let posCorredor3 = -3 ;
+        let posCorredor4 = 2;
+        let length = 10;
+
+        let posiciones = [posCorredor1, posCorredor2, posCorredor3, posCorredor4];
+        let salida = "";
+
+        for (let i = 0; i < posiciones.length; i++) {
+            let pos = posiciones[i];
+
+    
+            let indice = pos >= 0 ? pos : length + pos;
+
+    
+            if (indice < 0) indice = 0;
+            if (indice > length - 1) indice = length - 1;
+
+    
+            let carril = "";
+            for (let j = 0; j < length; j++) {
+                if (j === indice) {
+                carril += "C";
+           } else {
+            carril += "~";
+           }
+        }
+
+    
+        let desplazamiento = "";
+         for (let k = 0; k < i; k++) {
+            desplazamiento += " ";
+       }
+
+        salida += desplazamiento + carril + " /" + (i + 1) + "\n";
+        }
+
+       console.log(salida);
+    </script>
+</body>
+</html>
