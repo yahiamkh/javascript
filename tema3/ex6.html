@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const valores = [
+            true, false, true, false, false,
+            true, false, true, true, false
+        ];
+
+        let posicion = 0;
+
+        while (posicion < valores.length) {
+            if (valores[posicion] === true) {
+                console.log(`El valor true está en la posición ${posicion}`);
+            }
+
+            posicion++;
+        }
+    </script>
+</body>
+
+</html>

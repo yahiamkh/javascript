@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        function objetoDentro(cuadro) {
+            
+            if (cuadro.length === 0) {
+                return false;
+            }
+
+            const filas = cuadro.length;
+            const columnas = cuadro[0].length;
+
+            for (let fila = 0; fila < filas; fila++) {
+                for (let columna = 0; columna < columnas; columna++) {
+                    if (cuadro[fila][columna] === "*") {
+                        // Si está en un borde, está fuera
+                        if (
+                            fila === 0 ||
+                            fila === filas - 1 ||
+                            columna === 0 ||
+                            columna === columnas - 1
+                        ) {
+                            return false;
+                        }
+
+                        
+                        if (
+                            cuadro[fila - 1][columna] === "#" &&
+                            cuadro[fila + 1][columna] === "#" &&
+                            cuadro[fila][columna - 1] === "#" &&
+                            cuadro[fila][columna + 1] === "#"
+                        ) {
+                            return true;
+                        }
+
+                        return false;
+                    }
+                }
+            }
+
+        
+            return false;
+        }
+    </script>
+</body>
+
+</html>
