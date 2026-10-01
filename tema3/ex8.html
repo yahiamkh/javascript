@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const conjunto = new Set();
+
+        conjunto.add(12);
+        conjunto.add(14);
+        conjunto.add(11);
+        conjunto.add(13);
+        conjunto.add(15);
+        conjunto.add("i");
+        conjunto.add("j");
+        conjunto.add("k");
+        conjunto.add("l");
+
+        console.log(`El conjunto contiene ${conjunto.size} elementos`);
+        console.log("Elementos:", conjunto);
+
+        console.log("\nRecorrido del conjunto:");
+        for (const elemento of conjunto) {
+            console.log(elemento);
+        }
+    </script>
+</body>
+
+</html>

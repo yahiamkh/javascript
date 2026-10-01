@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const mapa = new Map();
+
+        mapa.set("12345678A", "Ana García");
+        mapa.set("23456789B", "Carlos López");
+        mapa.set("34567890C", "María Martín");
+        mapa.set("45678901D", "Juan Rodríguez");
+        mapa.set("56789012E", "Laura Sánchez");
+        mapa.set("67890123F", "Pedro Gómez");
+        mapa.set("78901234G", "Sofía Díaz");
+        mapa.set("89012345H", "Miguel Torres");
+        mapa.set("90123456I", "Carmen Ruiz");
+        mapa.set("01234567J", "David Moreno");
+
+        console.log("Lista de DNI y nombres:");
+        for (const [dni, nombre] of mapa) {
+            console.log(dni + " - " + nombre);
+        }
+
+        const tercerDNI = "34567890C";
+        mapa.set(tercerDNI, "María Martín (modificado)");
+
+        console.log("\nDespués de modificar el tercer nombre:");
+        for (const [dni, nombre] of mapa) {
+            console.log(dni + " - " + nombre);
+        }
+    </script>
+</body>
+
+</html>
