@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function jugar(numRondas = 5) {
+            var sumaJ1 = 0;
+            var sumaJ2 = 0;
+            for (var i = 0; i < numRondas; i++) {
+                var lanzamientoJ1 = Math.floor(Math.random() * 50) + Math.floor(Math.random() * 50);
+                var lanzamientoJ2 = Math.floor(Math.random() * 50) + Math.floor(Math.random() * 50);
+                sumaJ1 += lanzamientoJ1;
+                sumaJ2 += lanzamientoJ2;
+                if (lanzamientoJ1 > lanzamientoJ2) {
+                    console.log(`Ronda ${i + 1}: Jugador 1 ha ganado con  puntuación ${lanzamientoJ1} frente a ${lanzamientoJ2}`);
+                } else if (lanzamientoJ2 > lanzamientoJ1) {
+                    console.log(`Ronda ${i + 1}: Jugador 2 ha ganado con  puntuación ${lanzamientoJ2} frente a ${lanzamientoJ1}`);
+                }
+            }
+            console.log(`-------------------------------`)
+            if (sumaJ1 > sumaJ2) {
+                console.log(`Jugador 1 ha ganado con puntuación total ${sumaJ1} frente a ${sumaJ2}`);
+            } else if (sumaJ2 > sumaJ1) {
+                console.log(`Jugador 2 ha ganado con puntuación total ${sumaJ2} frente a ${sumaJ1}`);
+            } else {
+                console.log(`Empate con puntuación total ${sumaJ1} para ambos jugadores`);
+            }
+
+        }
+
+        jugar(3);
+
+    </script>
+</body>
+
+</html>
