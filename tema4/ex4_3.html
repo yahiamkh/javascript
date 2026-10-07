@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+
+      function adivino(...letras) {
+        const palabra = "hostia";
+        let result = "";
+        for (let i = 0; i < palabra.length; i++) {
+          if (letras.includes(palabra[i])){
+            result += palabra[i];
+          } else {
+            result += "-";
+          }
+        }
+        return document.write(result);
+      }
+
+      adivino('a', 'e', 'i', 'o', 'u', 's', 'n')
+
+    </script>
+  </body>
+</html>
