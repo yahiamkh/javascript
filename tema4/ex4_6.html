@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const cad1 = "aeiousn";
+        const cad2 = "afgousn";
+
+        const comparar = (cad1, cad2) => {
+            const vocals = "aeuio";
+            let contador1 = 0;
+            let contador2 = 0;
+
+            for (let i = 0; i < cad1.length; i++) {
+                if (vocals.includes(cad1[i])) {
+                    contador1++;
+                }
+            }
+            for (let i = 0; i < cad2.length; i++) {
+                if (vocals.includes(cad2[i])) {
+                    contador2++;
+                }
+            }
+            if (contador1 > contador2) return "cadena 1 tiene mas vocales"
+            if (contador1 < contador2) return "cadena 2 tiene mas vocales"
+            if (contador1 === contador2) return "cadena 1 es igual a cadena 2 de vocales"
+        }
+
+        console.log(comparar(cad1, cad2))
+    </script>
+</body>
+
+</html>
