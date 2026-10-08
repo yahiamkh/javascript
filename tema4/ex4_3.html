@@ -8,9 +8,15 @@
   <body>
     <script>
 
-      function adivino(...letras) {
+      function adivino(letras) {
         const palabra = "hostia";
         let result = "";
+
+        const letras = [];
+        for (let i = 0; i < arguments.length; i++) {
+          letras.push(arguments[i]);
+        }
+        
         for (let i = 0; i < palabra.length; i++) {
           if (letras.includes(palabra[i])){
             result += palabra[i];

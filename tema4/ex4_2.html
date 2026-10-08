@@ -10,13 +10,17 @@
 <body>
     <script>
         function jugar(numRondas = 5) {
-            var sumaJ1 = 0;
-            var sumaJ2 = 0;
-            for (var i = 0; i < numRondas; i++) {
-                var lanzamientoJ1 = Math.floor(Math.random() * 50) + Math.floor(Math.random() * 50);
-                var lanzamientoJ2 = Math.floor(Math.random() * 50) + Math.floor(Math.random() * 50);
+
+            const sumaJ1 = 0;
+            const sumaJ2 = 0;
+
+            for (const i = 0; i < numRondas; i++) {
+                const lanzamientoJ1 = Math.floor(Math.random() * 50) + Math.floor(Math.random() * 50);
+                const lanzamientoJ2 = Math.floor(Math.random() * 50) + Math.floor(Math.random() * 50);
+
                 sumaJ1 += lanzamientoJ1;
                 sumaJ2 += lanzamientoJ2;
+                
                 if (lanzamientoJ1 > lanzamientoJ2) {
                     console.log(`Ronda ${i + 1}: Jugador 1 ha ganado con  puntuación ${lanzamientoJ1} frente a ${lanzamientoJ2}`);
                 } else if (lanzamientoJ2 > lanzamientoJ1) {
