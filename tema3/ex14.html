@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+
+      function numerosFaltantes(numeros) {
+        let n = numeros.length;
+        let faltantes = [];
+
+        for (let numero of numeros) {
+          if (numero > n) n = numero;
+        }
+
+        for (let i = 1; i <= n; i++) {
+          if (!numeros.includes(i)) {
+            faltantes.push(i);
+          }
+        }
+
+        return faltantes;
+      }
+
+      console.log(numerosFaltantes([1, 3, 5]));
+      console.log(numerosFaltantes([2, 2, 2, 2]));
+      console.log(numerosFaltantes([4, 1, 2, 2]));
+      console.log(numerosFaltantes([1, 2, 3]));
+      console.log(numerosFaltantes([]));
+      
+    </script>
+  </body>
+</html>

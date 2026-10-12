@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function moverRobot(instrucciones) {
+        let x = 0;
+        let y = 0;
+        let realizados = [];
+        let pasos = 1;
+        let invertir = false;
+        let comprobar = false;
+
+        for (let movimiento of instrucciones) {
+          if (movimiento === "*") {
+            pasos = 2;
+            continue;
+          }
+
+          if (movimiento === "!") {
+            invertir = true;
+            continue;
+          }
+
+          if (movimiento === "?") {
+            comprobar = true;
+            continue;
+          }
+
+          if (invertir) {
+            if (movimiento === "L") movimiento = "R";
+            else if (movimiento === "R") movimiento = "L";
+            else if (movimiento === "U") movimiento = "D";
+            else if (movimiento === "D") movimiento = "U";
+          }
+
+          if (!comprobar || !realizados.includes(movimiento)) {
+            if (movimiento === "L") x -= pasos;
+            if (movimiento === "R") x += pasos;
+            if (movimiento === "U") y += pasos;
+            if (movimiento === "D") y -= pasos;
+
+            realizados.push(movimiento);
+          }
+
+          pasos = 1;
+          invertir = false;
+          comprobar = false;
+        }
+
+        if (x === 0 && y === 0) return true;
+        return [x, y];
+      }
+
+      console.log(moverRobot(""));
+      console.log(moverRobot("RL"));
+      console.log(moverRobot("UD"));
+      console.log(moverRobot("R"));
+      console.log(moverRobot("LL"));
+      console.log(moverRobot("*R"));
+      console.log(moverRobot("*RLL"));
+      console.log(moverRobot("R!L"));
+      console.log(moverRobot("R?R"));
+      console.log(moverRobot("!U?U"));
+      console.log(moverRobot("U?D"));
+      console.log(moverRobot("RR?L"));
+    </script>
+  </body>
+</html>

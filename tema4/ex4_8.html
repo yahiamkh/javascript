@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function sumaDigitos(numero) {
+        if (numero < 10) return numero;
+
+        return (numero % 10) + sumaDigitos(Math.floor(numero / 10));
+      }
+
+      console.log(sumaDigitos(527));
+    </script>
+  </body>
+</html>
