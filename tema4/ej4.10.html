@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let palabra = prompt("Introduce la palabra:");
+        palabra = palabra.toLowerCase();
+        
+        let tabla = [...palabra];  // Creacion con spread
+
+        /* 
+        let tabla = new Array(palabra.length);
+        for (let i = 0; i < palabra.length; i++) {    <- Creacion sin spread (...)
+            tabla[i] = palabra.charAt(i);
+        }
+        */
+
+        console.log(tabla); // Array antes de filtrar 
+
+        const quitarTildes = tabla.filter((a) => {
+
+            /* 
+            if(a != "á" && a != "é" && a != "í" && a != "ó" && a != "ú"){
+                return a;
+             }
+            */
+
+            return a != "á" && a != "é" && a != "í" && a != "ó" && a != "ú";
+        })
+
+        console.log(quitarTildes);
+
+    </script>
+</body>
+
+</html>

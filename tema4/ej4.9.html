@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio</title>
+</head>
+
+<body>
+    <script>
+        // Creacion de variables
+        let numPersonas = parseInt(prompt("A cuantas personas quieres meter al array?"));
+        let tablaPersonas = [];
+        let nombreIngresado;
+        let edadIngresada;
+
+        // Asignacion de personas
+        for (let i = 0; i < numPersonas; i++) {
+            nombreIngresado = prompt(`Introduce el nombre de la persona n${i + 1}`);
+            edadIngresada = parseInt(prompt(`Introduce la edad de la persona n${i + 1}`));
+
+            const persona = {
+                nombre: nombreIngresado,
+                edad: edadIngresada
+            };
+
+            tablaPersonas.push(persona);
+        }
+
+        console.log(tablaPersonas); // <- Array antes de sortearlo
+
+        // Sort del array
+        tablaPersonas.sort((a, b) => {
+            if (a.edad === b.edad) {
+                return a.nombre.localeCompare(b.nombre);
+            }
+
+            return a.edad - b.edad;
+        });
+
+        console.log(tablaPersonas); // <- Array despues de sortearlo
+
+    </script>
+</body>
+
+</html>

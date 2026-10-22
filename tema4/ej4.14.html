@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ejercicio</title>
+</head>
+
+<body>
+    <script>
+
+        let longitud = parseInt(prompt("Introduce el tamaño de la tabla:"));
+        let tablaNumeros = new Array(longitud);
+
+        for (i = 0; i < tablaNumeros.length; i++) {
+            tablaNumeros[i] = Math.floor(Math.random() * 11);
+        }
+
+        console.log(tablaNumeros); // Tabla antes de procesarla
+
+        function manejarTabla(tablaNumeros) {
+
+            // Solucion con .filter()
+            let tablaFinal = tablaNumeros.filter((numero, posicion) => {
+                return tablaNumeros.indexOf(numero) === posicion;
+            });
+
+            tablaFinal.sort((a, b) => {
+                return a - b;
+            })
+
+            return tablaFinal;
+        }
+
+        const tablaFinal = manejarTabla(tablaNumeros);
+
+        console.log(tablaFinal); // Tabla despues de procesarla
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        
+        let size = parseInt(prompt("Introduce el número de columnas:"));
+        let palabras = new Array(size);
+
+        for (let i = 0; i < palabras.length; i++) {
+            palabras[i] = prompt(`Introduce la palabra ${i + 1}`);
+        }
+
+        console.log(palabras); // Antes de la capitalizacion
+
+        /* Sin .map()
+        for (let i = 0; i < palabras.length; i++) {
+            palabras[i] = palabras[i].charAt(0).toUpperCase() + palabras[i].slice(1);
+        }
+        */
+
+        // Con .map()
+        const palabrasCapitalizadas = palabras.map((palabra) => {
+            return palabra.charAt(0).toUpperCase() + palabra.slice(1);
+        });
+
+        console.log(palabrasCapitalizadas); // Después de la capitalizacion
+
+    </script>
+</body>
+
+</html>
