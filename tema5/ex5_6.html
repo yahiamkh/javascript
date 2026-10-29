@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function esImpar(numero) {
+            return numero % 2 === 1;
+        }
+
+        function soloImpares(cadena) {
+            if (cadena.length === 0) {
+                return false;
+            }
+
+            for (let i = 0; i < cadena.length; i++) {
+                const numero = Number(cadena.charAt(i));
+
+                if (!esImpar(numero)) {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        // Ejemplos:
+        console.log(soloImpares("13579")); // true
+        console.log(soloImpares(" affection")); // false
+        console.log(soloImpares("1397"));  // true
+        console.log(soloImpares("1327"));  // false: contiene un 2
+        console.log(soloImpares("105"));   // false: contiene un 0
+        console.log(soloImpares(""));      // false: está vacía
+    </script>
+</body>
+
+</html>

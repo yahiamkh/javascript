@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        Array.prototype.shuffle = function () {
+            const mezclados = [];
+
+            while (this.length > 0) {
+                const indice = Math.floor(Math.random() * this.length);
+
+                // Extrae un elemento aleatorio y lo añade al array auxiliar.
+                const extraido = this.splice(indice, 1);
+                mezclados.push(extraido.pop());
+            }
+
+            // Devuelve los elementos al array original.
+            while (mezclados.length > 0) {
+                this.push(mezclados.pop());
+            }
+
+            return this;
+        };
+
+        const numeros = [1, 2, 3, 4, 5];
+
+        numeros.shuffle();
+
+        console.log(numeros); 
+    
+    </script>
+</body>
+
+</html>
