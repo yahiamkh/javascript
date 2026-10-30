@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Trigonometría {
+            seno(angulo) {
+                return Math.sin(angulo);
+            }
+
+            coseno(angulo) {
+                return Math.cos(angulo);
+            }
+
+            tangente(angulo) {
+                return Math.tan(angulo);
+            }
+
+            arcoseno(valor) {
+                return Math.asin(valor);
+            }
+
+            arcocoseno(valor) {
+                return Math.acos(valor);
+            }
+
+            arcotangente(valor) {
+                return Math.atan(valor);
+            }
+        }
+
+        const trig = new Trigonometría();
+        const angulo = Math.PI / 4;
+
+        console.log("Seno de PI/4:", trig.seno(angulo));
+        console.log("Coseno de PI/4:", trig.coseno(angulo));
+        console.log("Tangente de PI/4:", trig.tangente(angulo));
+
+        console.log("Arcoseno de 0.5:", trig.arcoseno(0.5));
+        console.log("Arcocoseno de 0.5:", trig.arcocoseno(0.5));
+        console.log("Arcotangente de 1:", trig.arcotangente(1));
+    </script>
+</body>
+
+</html>
